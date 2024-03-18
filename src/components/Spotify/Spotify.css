@@ -1,0 +1,17 @@
+.spotify {
+  background: linear-gradient(to bottom, #1e4e5b, #070707ca);
+  height: 100vh;
+  display: flex;
+  gap: 10px;
+}
+
+.spotify .sidebar {
+  flex: 2;
+  height: 100% !important;
+  background-color: #000;
+}
+
+.spotify .body {
+  flex: 10;
+  padding: 30px;
+}

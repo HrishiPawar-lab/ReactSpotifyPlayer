@@ -1,0 +1,32 @@
+.sidebar-inner {
+  background: #000;
+  height: 100%;
+  color: #ffff;
+  padding: 30px;
+}
+
+.sidebar-inner .logo {
+  width: 100px;
+  display: block;
+  margin-bottom: 20px;
+}
+.sidebar-inner .logo img {
+  width: 100%;
+  filter: invert(1);
+}
+.sidebar-inner .list {
+  list-style: none;
+}
+.sidebar-inner .list li {
+  display: flex;
+  gap: 10px;
+  margin-block: 8px;
+  font-size: 16px;
+  font-weight: 200;
+  align-items: center;
+}
+
+.sidebar-inner svg {
+  width: 20px;
+  height: 20px;
+}

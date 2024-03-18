@@ -1,0 +1,33 @@
+.dashboard {
+  margin-top: 50px;
+}
+
+.dashboard .image {
+  width: 200px;
+}
+.dashboard .image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.text {
+  color: white;
+}
+.text h1 {
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.text h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+.tracklists-wrapper {
+  margin-top: 50px;
+}

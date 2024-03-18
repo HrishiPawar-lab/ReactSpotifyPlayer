@@ -1,0 +1,38 @@
+.tracklists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.track-details {
+  display: flex;
+  flex-direction: column;
+}
+.myPlaylist {
+  margin-block: 8px;
+}
+.tracks img {
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.tracklists > div {
+  flex: 1;
+}
+.artist {
+  font-size: 14px;
+}
+.duration {
+  text-align: end;
+}
+.album {
+  text-align: center;
+}
+.myPlaylist:hover {
+  background-color: rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.myPlaylist {
+  transition: 0.5s ease all;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
