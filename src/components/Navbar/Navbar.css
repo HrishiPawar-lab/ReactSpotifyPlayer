@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
 }
 
@@ -23,6 +23,6 @@
   align-items: center;
   gap: 5px;
   border-radius: 20px;
-  background-color: #062d15;
+  background-color: #22062d;
   color: #fff;
 }

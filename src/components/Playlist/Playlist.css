@@ -1,8 +1,19 @@
 .playlist {
-  margin-top: 20px;
+  /* overflow: auto; */
+  border-radius: 10px;
+  background-color: rgb(24, 24, 24) !important;
+}
+
+.playlist::-webkit-scrollbar {
+  display: none !important;
 }
 
 .playlist h4 {
   font-weight: 400;
   letter-spacing: 1px;
+}
+.playlist {
+  display: flex;
+  gap: 5px;
+  justify-content: start;
 }

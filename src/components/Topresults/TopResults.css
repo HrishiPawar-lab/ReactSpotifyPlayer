@@ -1,0 +1,31 @@
+.top-results-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-columns: repeat(2, 1fr);
+  margin-bottom: 30px;
+  gap: 10px;
+}
+.top-results-list .list {
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.29);
+  height: 80px;
+  align-items: center;
+  border-radius: 5px;
+}
+.top-results-list .list:hover {
+  background-color: rgba(0, 0, 0, 0.56);
+}
+.top-results-list .list img {
+  width: 80px;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  object-fit: cover;
+}
+
+.top-results-list .list h3 {
+  font-size: 12px;
+  color: white;
+}

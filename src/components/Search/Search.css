@@ -1,0 +1,10 @@
+.search-sidebar {
+  flex: 2;
+  height: 100vh !important;
+  /* overflow: hidden; */
+}
+
+.search-genres {
+  height: 100%;
+  flex: 10;
+}

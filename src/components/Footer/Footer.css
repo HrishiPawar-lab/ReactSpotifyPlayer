@@ -1,0 +1,40 @@
+.album-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.album-image img {
+  border-radius: 10px;
+  width: 60px;
+}
+.player {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  padding-inline: 30px;
+  background: #000;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.player h3 {
+  font-size: 16px;
+}
+.player h4 {
+  font-size: 2px;
+  font-weight: 300;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.player-controls svg {
+  font-size: 25px;
+  cursor: pointer;
+}

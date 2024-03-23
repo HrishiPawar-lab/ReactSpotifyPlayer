@@ -1,23 +1,75 @@
-import { useState, useEffect } from "react"
-import SpotifyPlayer from "react-spotify-web-playback"
+import React from "react";
+import useStoreContext from "../../context/StoreContext";
+import { useQuery } from "@tanstack/react-query";
+import { currentSong } from "../../utils/http";
+import "./Footer.css";
+import { IoMdPlay } from "react-icons/io";
+import { IoPlayBackSharp } from "react-icons/io5";
+import { IoPlayForward } from "react-icons/io5";
+import { IoPause } from "react-icons/io5";
+import { useState } from "react";
 
-export default function Player({ accessToken, trackUri = 'spotify:user:82wcpp0z04h4mysqwjnt9dd2w' }) {
-    const [play, setPlay] = useState(false)
+const Footer = () => {
+    const [playing, setPlaying] = useState(true);
 
-    useEffect(() => setPlay(true), [trackUri])
+    const ctx = useStoreContext();
+    const { state } = ctx;
 
-    if (!accessToken) return null
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["current-song"],
+        queryFn: ({ signal, token }) => currentSong({ signal, token: state.token }),
+        staleTime: 500,
+    });
+
+    let currentSongData;
+
+    if (data) {
+        currentSongData = {
+            name: data?.item?.name,
+            artists: data?.item?.artists,
+            songId: data?.item?.id,
+            image: data?.item?.album.images[0],
+        };
+    }
+
+    const handlePlayPause = () => {
+        setPlaying(!playing);
+    };
+
     return (
         <>
-            <SpotifyPlayer
-                token={'BQCm_gz7JU61NKINl3-Fm0CAgTCMquAhC4oAW_iSq9kwBcORRK2342xDoesJDlAAg-BV4B8UaM2EKEZP7yoEfs-KmE3uvgbnVJM0ieReK0PreN62ABjhiLuLV00gzwpFRRnQqx2MlD1FgWKBlkJuVF2uXzZjNe_bneI9QRB8UtJ0oyCqZ7sSK-rsVu5_BCjxZYCawJXtEu2oKPNJ7p4uSWyceFzz'}
-                showSaveIcon
-                callback={state => {
-                    if (!state.isPlaying) setPlay(false)
-                }}
-                play={play}
-                uris={trackUri ? [trackUri] : []}
-            />
+            {
+                <div className="player">
+                    <div className="album-image">
+                        <img src={currentSongData?.image?.url} alt="" />
+                        <div>
+                            <h3>{currentSongData?.name}</h3>
+                            <h4>
+                                {currentSongData?.artists?.map((artist, i) => {
+                                    return (
+                                        <span className="artist" key={artist.id}>
+                                            {artist.name}
+                                            {i < currentSongData.artists.length - 1 && ", "}
+                                        </span>
+                                    );
+                                })}
+                            </h4>
+                        </div>
+                    </div>
+                    <div style={{ flex: 1 }}></div>
+                    <div className="player-controls">
+                        <IoPlayBackSharp></IoPlayBackSharp>
+                        {playing ? (
+                            <IoPause onClick={handlePlayPause}></IoPause>
+                        ) : (
+                            <IoMdPlay onClick={handlePlayPause}></IoMdPlay>
+                        )}
+                        <IoPlayForward></IoPlayForward>
+                    </div>
+                </div>
+            }
         </>
-    )
-}
+    );
+};
+
+export default Footer;

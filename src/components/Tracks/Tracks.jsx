@@ -10,7 +10,7 @@ const Tracks = ({ track }) => {
                         <img src={track.image} alt="" />
                     </div>
                     <div className='track-details'>
-                        <h4>{track.name}</h4>
+                        <h4>{track.name.slice(0, 20)}</h4>
                         <div>
                             {track.artists.map((artist, i) => {
                                 return (

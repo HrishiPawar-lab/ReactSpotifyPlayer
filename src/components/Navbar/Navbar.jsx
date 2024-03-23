@@ -15,17 +15,15 @@ const Navbar = () => {
         {
             queryKey: ['user'],
             queryFn: ({ signal, token }) => getUser({ signal, token: state.token }),
-            staleTime: 3000
+            staleTime: 0,
+            retry: 3
         }
     );
 
     console.log(state.token)
-
     return (
         <div className='navbar'>
-            <div className='search'>
-                <input type="text" placeholder='Search for albums , playlists, artists ' />
-            </div>
+
             {
                 data && <div className='user' title={data.display_name}>
                     <RiUserReceived2Fill />

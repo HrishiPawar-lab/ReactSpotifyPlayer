@@ -1,0 +1,27 @@
+.genre {
+  height: 150px;
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+}
+.genre-box {
+  display: grid;
+  padding: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-row: repeat(5, 1fr);
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.85);
+  height: 100vh;
+  /* overflow-y: auto; */
+}
+
+.genre-box::-webkit-scrollbar {
+  display: none !important;
+}
+
+.genre-box h4 {
+  text-transform: capitalize;
+  font-size: 20px;
+}

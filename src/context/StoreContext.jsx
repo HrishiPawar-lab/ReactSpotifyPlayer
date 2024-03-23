@@ -14,6 +14,11 @@ const reducer = (state, action) => {
                 ...state,
                 playlist: action.payload,
             };
+        case "GET_ID":
+            return {
+                ...state,
+                id: action.payload,
+            };
         default:
             return state;
     }
@@ -21,6 +26,7 @@ const reducer = (state, action) => {
 
 const initialState = {
     token: "",
+    id: "2maEFyX1eMkApjbcTmocYs",
     playlist: []
 };
 
@@ -33,11 +39,13 @@ export const StoreContextProvider = ({ children }) => {
         dispatch({ type: "GET_PLAYLIST", payload: playlist });
     }
 
-
+    const changeId = (id) => {
+        dispatch({ type: "GET_ID", payload: id });
+    }
 
 
     return (
-        <StoreContext.Provider value={{ state, getAccessToken, getPlaylist }}>
+        <StoreContext.Provider value={{ state, getAccessToken, getPlaylist, changeId }}>
             {children}
         </StoreContext.Provider>
     );

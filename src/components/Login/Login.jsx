@@ -4,7 +4,7 @@ import "./Login.css"
 const Login = () => {
     const handleClick = async () => {
         const client_id = "9858797532774d178770d1abdff0a98f";
-        const redirect_uri = "http://localhost:5173";
+        const redirect_uri = "http://localhost:5173/spotify";
         const api_uri = "https://accounts.spotify.com/authorize";
         const scope = ["user-read-private", "user-read-email", "user-modify-playback-state", "user-read-playback-state", "user-read-currently-playing",
             "user-read-recently-played",

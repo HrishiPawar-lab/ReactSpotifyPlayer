@@ -1,8 +1,9 @@
 .sidebar-inner {
-  background: #000;
-  height: 100%;
+  background: #000000db;
   color: #ffff;
-  padding: 30px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 30px;
 }
 
 .sidebar-inner .logo {
@@ -16,6 +17,9 @@
 }
 .sidebar-inner .list {
   list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(24, 24, 24) !important;
 }
 .sidebar-inner .list li {
   display: flex;

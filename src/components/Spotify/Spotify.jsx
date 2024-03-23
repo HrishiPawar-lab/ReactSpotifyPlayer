@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
 import Body from '../Body/Body';
 import './Spotify.css';
-import Player from '../Footer/Footer';
+import Footer from '../Footer/Footer';
+import TopResults from '../Topresults/TopResults';
 
 const Spotify = () => {
+
   return (
     <>
       <div className='spotify'>
@@ -14,10 +16,13 @@ const Spotify = () => {
         </div>
         <div className="body">
           <Navbar></Navbar>
+          <div className="top-artists">
+            <TopResults></TopResults>
+          </div>
           <Body></Body>
-          <Player></Player>
         </div>
       </div>
+      <Footer></Footer>
     </>
   )
 }
